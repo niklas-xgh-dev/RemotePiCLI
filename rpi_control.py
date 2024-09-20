@@ -130,7 +130,7 @@ class UbuntuRPiControlCLI:
                 name = list(self.custom_commands.keys())[int(choice) - 1]
                 result = self.run_command(self.custom_commands[name])
                 print(result)
-                self.copy_to_clipboard(result)
+                #self.copy_to_clipboard(result)
             else:
                 print("Invalid choice.")
 
@@ -144,10 +144,6 @@ class UbuntuRPiControlCLI:
     def save_custom_commands(self):
         with open('custom_commands.json', 'w') as f:
             json.dump(self.custom_commands, f)
-
-    def copy_to_clipboard(self, text):
-        print("\nOutput copied to clipboard. Paste it in your iPhone's notes or messages.")
-        # In a real implementation, you'd use a clipboard library or system call here
 
     def exit_cli(self):
         """Exit the CLI"""
